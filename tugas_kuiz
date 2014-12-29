@@ -1,0 +1,67 @@
+PENCARIAN
+#include <stdio.h>
+#define true 1
+#define false 0
+main()
+{
+    int a[2][5]={4,5,8,1,4,11,23,10,13},x=4,idx,i,j,ketemu=false, t;
+
+    for(i=0;i<2;i++){
+        for(j=0;j<5;j++){
+          t=(i+j)/2;
+          if(a[i][j]==x){
+          ketemu=true;
+            t=a[i][j];
+            idx=t;
+            }else{
+                if(a[i][j]==x){
+                ketemu=true;
+                t=a[i][j];
+                idx=t;
+            }else{
+                if(x>a[t]){
+                    i=t+1;
+                }else{
+                j=t-1;
+                }
+            }
+        }
+    }
+    }
+    if (ketemu==true){
+        printf("Nilai %d ditemukan pada index %d", x, idx);
+    }else{
+        printf("Nilai %d tidak ditemukan");
+    }
+}
+
+
+PENGURUTAN
+
+#include <stdio.h>
+#include <conio.h>
+
+main()
+{
+    int a[2][5]={4,5,8,1,4,3,11,23,10,13},i,j,k,l,temp;
+    for(i=1;i>=0;i--){
+        for(j=4;j>=0;j--){
+    for(k=0;k<2;k++){
+        for(l=0;l<5;l++){
+        if(a[i][j]<=a[k][l]){
+            temp=a[i][j];
+            a[i][j]=a[k][l];
+            a[k][l]=temp;
+            }
+            }
+        }
+            }
+    }
+        printf("Data stelah diurutkan : ");
+        for(i=0;i<2;i++){
+            for(j=0;j<5;j++){
+                printf("%d ",a[i][j]);
+            }
+        }
+}
+
